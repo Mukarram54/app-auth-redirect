@@ -1,17 +1,92 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Successful</title>
 
-<html>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+    }
 
-  <head>
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 40px 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      max-width: 320px;
+      animation: pop 0.6s ease-out;
+    }
 
-    <title>Auth Redirect</title>
+    .check {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
 
-  </head>
+    h1 {
+      margin: 10px 0;
+      font-size: 22px;
+    }
 
-  <body>
+    p {
+      opacity: 0.9;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
 
-    <h3>Login successful. You can close this page.</h3>
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: white;
+      color: #2575fc;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s;
+    }
 
-  </body>
+    .btn:hover {
+      transform: scale(1.05);
+    }
 
+    @keyframes pop {
+      from {
+        transform: scale(0.85);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="check">✅</div>
+    <h1>Login Successful</h1>
+    <p>You’re all set! You can now return to the app.</p>
+
+    <a class="btn" href="com.yourapp.package://login">
+      Open App
+    </a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "com.yourapp.package://login";
+    }, 2000);
+  </script>
+</body>
 </html>
